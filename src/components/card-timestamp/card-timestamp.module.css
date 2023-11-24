@@ -1,0 +1,6 @@
+.cardTimestamp {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-primary);
+  margin-bottom: var(--padding-base);
+}

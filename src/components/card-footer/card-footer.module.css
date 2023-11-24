@@ -1,0 +1,5 @@
+.cardFooter {
+  margin-top: var(--padding-large);
+  display: flex;
+  gap: var(--padding-base);
+}

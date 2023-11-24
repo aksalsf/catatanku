@@ -1,0 +1,5 @@
+.cardTitle {
+  font-size: var(--font-size-xxlarge);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
