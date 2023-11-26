@@ -18,9 +18,9 @@ function useCardList () {
 
   const [noteList, setNoteList] = useState(data)
 
-  function changeIsNoteArchived (noteId) {
+  function changeIsNoteArchived (noteId, isArchived) {
     updateData(noteId, {
-      archived: !noteList.find((note) => note.id === noteId).archived
+      archived: isArchived
     })
   }
 
@@ -61,13 +61,8 @@ function useCardList () {
   }
 
   useEffect(() => {
-    setNoteList(data)
-  }, [data])
-
-  useEffect(() => {
-    setNoteList(
-      (prevNoteList) => sortNoteList(prevNoteList)
-        .filter(filterArchivedNote)
+    setNoteList(sortNoteList(data)
+      .filter(filterArchivedNote)
     )
   }, [data, isShowArchive])
 

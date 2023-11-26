@@ -16,7 +16,7 @@ function useData () {
       if (data.id === dataId) {
         return {
           ...data,
-          newData
+          ...newData
         }
       }
       return data
