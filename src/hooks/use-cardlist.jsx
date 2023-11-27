@@ -46,7 +46,7 @@ function useCardList () {
       return
     }
 
-    setNoteList((prevNoteList) => prevNoteList.filter((note) => {
+    setNoteList(data.filter((note) => {
       const noteTitle = note.title.toLowerCase()
       const noteBody = note.body.toLowerCase()
       const query = searchQuery.toLowerCase()

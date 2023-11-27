@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { getInitialData } from "@/utils"
+import { useEffect, useState } from "react"
 
 function useData () {
-  const [data, setData] = useState(getInitialData())
+  const localStorageData = JSON.parse(localStorage.getItem("data")) || []
+  const [data, setData] = useState(localStorageData)
 
   function addNewData (newData) {
     setData((prevData) => [
@@ -26,6 +26,10 @@ function useData () {
   function deleteData (dataId) {
     setData((prevData) => prevData.filter((data) => data.id !== dataId))
   }
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data))
+  }, [data])
 
   return {
     data,
